@@ -5,13 +5,39 @@
     <link rel="stylesheet" href="stylesheet.css">
     <script src="jquery-1.10.0.min.js"></script>
     <script src="script.js"></script>
-    <title>jQuery Quiz</title>
+    <title>Web Development Quiz</title>
   </head>
   
   <body>
     
+    <h1>Web Development Quiz</h1>
     
+    <div id='quizbox'>
+      
+      <div id='startTest'>
+        <h2>Welcome to the Web Development Quiz!</h2>
+        <input id='startTestButton' class='button' type='submit' value='Start Test'>
+      </div>
+      
+      <div id='testQuestion'>
+        <h2>Please select your answer and click submit.</h2>
+        <p id='questionNum'>Question:</p>
+        <p id='question'>Question goes here</p>
+        <div id='choices'></div>
+        <input type='submit' id='submit' class='button'>
+      </div>
+      
+    </div>
     
+    <div id='messagebox'>
+      
+      <div id='message'>
+        <p>Message goes here.</p>
+        <input id='continue' class='button' type='submit' value='Continue'>
+      </div>
+      
+    </div>
+        
   </body>
   
 </html>

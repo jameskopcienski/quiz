@@ -49,3 +49,73 @@ table {
 
 /* ----------------------------- End of reset --------------------------- */
 
+body {
+  background-color: #dabc7b;
+}
+
+h1 {
+  font-family: 'Lucida Grande', Verdana, sans-serif;
+  font-size: 36px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+#quizbox {
+  font-family: 'Lucida Grande', Verdana, sans-serif;
+  font-size: 16px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  width: 600px;
+  border: 2px solid #72500b;
+  border-radius: 10px;
+  background-color: #eaa61e;
+}
+
+#quizbox h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#quizbox p {
+	font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.guess {
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+.button {
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #edcf95;
+  border: solid 1px #72500b;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-family: 'Lucida Grande', Verdana, sans-serif;
+  font-size: 14px;
+}
+
+#messagebox {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 140px;
+  width: 600px;
+  border: 2px solid #72500b;
+  border-radius: 10px;
+  background-color: #eaa61e;
+}
+
+#message {
+  font-family: 'Lucida Grande', Verdana, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 20px;  
+}
