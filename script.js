@@ -1,6 +1,6 @@
 jQuery(function($) {
   
-  //Questions from http://www.w3schools.com/ tutorial quizes.
+  //Questions from http://www.w3schools.com/ tutorial quizzes.
   var questions = [
                    {question: 'What does HTML stand for?',
                       choices: ['Hyperlinks and Text Markup Language', 'Hyper Text Markup Language', 'Home Tool Markup Language'],
@@ -70,31 +70,40 @@ jQuery(function($) {
 
   
   $('#testQuestion').hide();
-  $('#message').hide();
   
-  $('#startTestButton').click(function(){
-    $('#startTest').hide();
+  $('#startQuizButton').click(function(){
+    $('#message').hide();
+    $('#startQuiz').hide();
     $('#testQuestion').show();
     questionDisplay();
-    console.log(questionNum);
   })
   
   $('#testQuestion').on('click', '#submit', function(){
     var answer = $('input:radio[name=guess]:checked').val();
     var correctAnswer = questions[questionNum].correct;
-    if (answer == correctAnswer) {
-      $('#message p').html("Correct!");
+    if (answer == null) {
+      $('#message').html("<p>Please select an answer.</p>");
+    } else if (answer == correctAnswer) {
+      $('#message').html("<p>Correct!</p><input id='continue' class='button' type='submit' value='Continue'>");
       correctTotal++;
     } else {
-      $('#message p').html("Wrong! The correct answer is:<br>" + questions[questionNum].choices[correctAnswer]);
+      $('#message').html("<p>Wrong! The correct answer is:<br>" + questions[questionNum].choices[correctAnswer] + "</p><input id='continue' class='button' type='submit' value='Continue'>");
     }
     $('#message').show();
   })
   
   $('#message').on('click', '#continue', function(){
-    $('#message').hide();
-    questionNum++;
-    questionDisplay();
+    if ((questionNum+1) == questionTotal) {
+      $('#message').html("You have answered " + correctTotal + " questions correctly out of " + questionTotal + " total questions.<br>Click on Start Quiz above to take the quiz again.");
+      $('#testQuestion').hide();
+      $('#startQuiz').show();
+      questionNum = 0;
+      correctTotal = 0;
+    } else {
+      $('#message').hide();
+      questionNum++;
+      questionDisplay();
+    }
   })
 
 
@@ -106,9 +115,6 @@ jQuery(function($) {
     for (var i=0; i<choiceTotal; i++) {
       $('#choices').append("<input type='radio' class='guess' name='guess' value=" + i + ">" + questions[questionNum].choices[i] + "<br>");
     }
-//    $('#testQuestion').append("<input type='submit' id='submit' class='button'>");
   }
 
 }); 
-
-/* $(document).ready(function() */

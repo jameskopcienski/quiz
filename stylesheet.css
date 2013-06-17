@@ -116,6 +116,7 @@ h1 {
 #message {
   font-family: 'Lucida Grande', Verdana, sans-serif;
   font-size: 16px;
+	line-height: 1.2;
   text-align: center;
   margin-top: 20px;  
 }
